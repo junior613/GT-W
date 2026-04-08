@@ -474,7 +474,7 @@ with st.sidebar:
     # Navigation
     page = st.radio(
         "Navigation",
-        ["Tableau de board", "Kanban", "Workflows", "Statistiques", "Paramètres"],
+        ["Tableau de bord", "Kanban", "Workflows", "Statistiques", "Paramètres"],
         label_visibility="collapsed"
     )
     
