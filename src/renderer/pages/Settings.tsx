@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useStore } from '../stores/useStore';
+import PageTransition from '../components/PageTransition';
 import { 
   Moon, 
   Sun, 
@@ -67,6 +68,7 @@ export default function SettingsPage() {
   ];
 
   return (
+    <PageTransition>
     <div className="space-y-6 max-w-4xl">
       {/* Apparence */}
       <section className="bg-card rounded-lg shadow-sm border p-6">
@@ -212,5 +214,6 @@ export default function SettingsPage() {
         </div>
       </section>
     </div>
+    </PageTransition>
   );
 }

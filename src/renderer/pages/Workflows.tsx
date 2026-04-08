@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useStore } from '../stores/useStore';
+import PageTransition from '../components/PageTransition';
 import { 
   Plus, 
   ToggleLeft, 
@@ -64,6 +65,7 @@ export default function Workflows() {
   }
 
   return (
+    <PageTransition>
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
@@ -192,6 +194,7 @@ export default function Workflows() {
         />
       )}
     </div>
+    </PageTransition>
   );
 }
 

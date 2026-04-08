@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { 
   LayoutDashboard, 
   Kanban, 
@@ -227,13 +228,15 @@ function App() {
 
         {/* Pages */}
         <div className="p-6">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/kanban" element={<KanbanBoard />} />
-            <Route path="/workflows" element={<Workflows />} />
-            <Route path="/statistics" element={<Statistics />} />
-            <Route path="/settings" element={<SettingsPage />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/kanban" element={<KanbanBoard />} />
+              <Route path="/workflows" element={<Workflows />} />
+              <Route path="/statistics" element={<Statistics />} />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Routes>
+          </AnimatePresence>
         </div>
       </main>
 

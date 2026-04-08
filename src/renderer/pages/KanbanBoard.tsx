@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useStore } from '../stores/useStore';
+import PageTransition from '../components/PageTransition';
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
 import { 
   Plus, 
@@ -113,6 +114,7 @@ export default function KanbanBoard() {
   }
 
   return (
+    <PageTransition>
     <div className="h-full">
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="flex gap-4 overflow-x-auto pb-4 h-full">
@@ -263,6 +265,7 @@ export default function KanbanBoard() {
         />
       )}
     </div>
+    </PageTransition>
   );
 }
 

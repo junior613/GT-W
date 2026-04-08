@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useStore } from '../stores/useStore';
+import PageTransition from '../components/PageTransition';
 import { 
   BarChart3, 
   PieChart, 
@@ -75,6 +76,7 @@ export default function Statistics() {
   const maxTasks = Math.max(...tasksByDay.map(d => Math.max(d.created, d.completed)), 1);
 
   return (
+    <PageTransition>
     <div className="space-y-6">
       {/* Onglets */}
       <div className="flex border-b">
@@ -330,5 +332,6 @@ export default function Statistics() {
         </div>
       )}
     </div>
+    </PageTransition>
   );
 }
