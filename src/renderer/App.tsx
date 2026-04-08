@@ -229,7 +229,7 @@ function App() {
         {/* Pages */}
         <div className="p-6">
           <AnimatePresence mode="wait">
-            <Routes>
+            <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/kanban" element={<KanbanBoard />} />
               <Route path="/workflows" element={<Workflows />} />
