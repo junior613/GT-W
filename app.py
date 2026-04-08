@@ -138,6 +138,141 @@ st.markdown("""
     .stDataFrame, .stDataFrame th, .stDataFrame td {
         color: #ffffff !important;
     }
+    
+    /* === FADE-IN / TRANSITION ANIMATIONS === */
+    
+    /* Fade-in keyframes */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes slideInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes scaleIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    /* Main content fade-in on page load */
+    [data-testid="stMainBlockContainer"] {
+        animation: fadeInUp 0.6s ease-out;
+    }
+    
+    /* Staggered fade-in for metric cards */
+    [data-testid="stMetric"] {
+        animation: scaleIn 0.5s ease-out both;
+    }
+    [data-testid="stHorizontalBlock"] > div:nth-child(1) [data-testid="stMetric"] {
+        animation-delay: 0.05s;
+    }
+    [data-testid="stHorizontalBlock"] > div:nth-child(2) [data-testid="stMetric"] {
+        animation-delay: 0.15s;
+    }
+    [data-testid="stHorizontalBlock"] > div:nth-child(3) [data-testid="stMetric"] {
+        animation-delay: 0.25s;
+    }
+    [data-testid="stHorizontalBlock"] > div:nth-child(4) [data-testid="stMetric"] {
+        animation-delay: 0.35s;
+    }
+    
+    /* Staggered fade for columns (Kanban) */
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(1) {
+        animation: fadeInUp 0.5s ease-out 0.1s both;
+    }
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(2) {
+        animation: fadeInUp 0.5s ease-out 0.2s both;
+    }
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(3) {
+        animation: fadeInUp 0.5s ease-out 0.3s both;
+    }
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(4) {
+        animation: fadeInUp 0.5s ease-out 0.4s both;
+    }
+    [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:nth-child(5) {
+        animation: fadeInUp 0.5s ease-out 0.5s both;
+    }
+    
+    /* Sidebar slide-in */
+    [data-testid="stSidebar"] > div:first-child {
+        animation: slideInLeft 0.5s ease-out;
+    }
+    
+    /* Expanders fade-in */
+    [data-testid="stExpander"] {
+        animation: fadeInUp 0.4s ease-out both;
+    }
+    
+    /* Tabs fade-in */
+    .stTabs [data-baseweb="tab-panel"] {
+        animation: fadeIn 0.4s ease-out;
+    }
+    
+    /* Dividers subtle fade */
+    [data-testid="stDivider"] {
+        animation: fadeIn 0.6s ease-out 0.3s both;
+    }
+    
+    /* Title animations */
+    h1 {
+        animation: fadeInUp 0.5s ease-out;
+    }
+    h2, h3 {
+        animation: fadeIn 0.5s ease-out 0.2s both;
+    }
+    
+    /* Buttons smooth appearance */
+    .stButton > button {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    /* Form containers */
+    [data-testid="stForm"] {
+        animation: scaleIn 0.4s ease-out;
+    }
+    
+    /* Progress bars */
+    .stProgress {
+        animation: slideInRight 0.5s ease-out 0.2s both;
+    }
+    
     </style>
 """, unsafe_allow_html=True)
 
